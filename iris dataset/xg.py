@@ -14,7 +14,7 @@ X_test=test[list(features)].values
 #print (X_test)
 Y_test=test['Species'].values
 #print (Y_test)
-#import xgboost as xgb
+
 from xgboost import XGBClassifier
 xgb_data=XGBClassifier().fit(X_train,Y_train)	
 #print (xgb_data)
@@ -24,8 +24,7 @@ xgb_predictions = xgb_data.predict(X_test)
 
  
 # model accuracy for X_test  
-acc_train=xgb_data.score(X_train, Y_train)
-print (acc_train)
+
 accuracy = xgb_data.score(X_test, Y_test)
 print (accuracy)
  
